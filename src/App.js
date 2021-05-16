@@ -39,16 +39,21 @@ class App extends React.Component{
       return (
         <div className="App">
 
-          {this.state.show && (
+          <button onClick={this.handleClick}> {this.state.show? 'hide profile' : ' show profile '} </button>
+          {this.state.show? (
+
+          this.state.show && (
         <>
           <div className="pic" > {this.state.ppic} </div> 
           <h1 style={{fontFamily:"cursive" }}> {this.state.fullName} </h1>  
           <h3 style={{fontFamily:"cursive" }}> {this.state.profession} </h3>  
           <h2 style={{fontFamily:"cursive" }}> {this.state.bio} </h2> 
         </> 
-          )} 
-          <button onClick={this.handleClick}> show and hide </button>
-          <p >The last component was mounted since: {this.state.time} seconds</p>
+          ) ) :(
+            <p >The last component was mounted since: {this.state.time} seconds</p>       
+          ) }
+          
+          
         </div>
       );
   }
